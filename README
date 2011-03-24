@@ -1,0 +1,27 @@
+textpipe
+--------
+
+Examples:
+
+* wordnet lookup:
+
+http://localhost:8192/?do=wn&s=airplane
+
+* url processing:
+
+http://localhost:8192/?do=extract&url=http://en.wikipedia.org/wiki/Charlie_Sheen
+
+* part of speech identification:
+
+http://localhost:8192/?do=pos&text=I%20love%20golden%20retrievers!
+
+* information about a server:
+
+http://localhost:8192/?do=resolve_url&url=http://wikipedia.org
+
+* sentence isolation & extraction:
+
+http://localhost:8192/?do=sentences&text=Hello,%20my%20name%20is%20Bob.%20%20I%20love%20to%20write%20Erlang%20code.
+
+
+
