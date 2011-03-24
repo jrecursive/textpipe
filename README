@@ -7,21 +7,125 @@ Examples:
 
 http://localhost:8192/?do=wn&s=airplane
 
-* url processing:
+-----
 
-http://localhost:8192/?do=extract&url=http://en.wikipedia.org/wiki/Charlie_Sheen
+{"result": [{
+    "__word": "airplane",
+    "_hypernym": [{
+        "gloss": "a non-buoyant aircraft that requires a source of power to hold it aloft and to propel it",
+        "lemma": "heavier-than-air_craft",
+        "lexical_id": "0"
+    }],
+    "_hyponym": [
+        {
+            "gloss": "a commercial airplane that carries passengers",
+            "lemma": "airliner",
+            "lexical_id": "0"
+        },
+        {
+            "gloss": "an airplane designed to take off and land on water",
+            "lemma": "amphibian",
+            "lexical_id": "0"
+        }, ( ... )
+    ],
+    "_member_of_this_domain_-_topic": [
+        {
+            "gloss": "(of a ship or an airplane) behind; \"we dropped her astern on the end of a seven-inch manilla, and she laid comfortably on the ebb tide\"",
+            "lemma": "astern",
+            "lexical_id": "0"
+        }, ( ... )
+    ],
+    "_part_meronym": [
+        {
+            "gloss": "a pedal that controls the throttle valve; \"he stepped on the gas\"",
+            "lemma": "accelerator",
+            "lexical_id": "2"
+        },
+        {
+            "gloss": "a pedal that controls the throttle valve; \"he stepped on the gas\"",
+            "lemma": "accelerator_pedal",
+            "lexical_id": "0"
+        }, ( ... )
+    ],
+    "gloss": "an aircraft that has a fixed wing and is powered by propellers or jets; \"the flight was delayed due to trouble with the airplane\"",
+    "id": "WID-02691156-N-??-airplane",
+    "lemma": "airplane",
+    "pos": "noun",
+    "stem": "airplane"
+}]}
+
+-----
 
 * part of speech identification:
 
+note: for pos definitions, see http://alias-i.com/lingpipe-3.9.3/docs/api/com/aliasi/corpus/parsers/BrownPosParser.html
+
 http://localhost:8192/?do=pos&text=I%20love%20golden%20retrievers!
+
+{"pos": [
+    {
+        "tag": "ppss",
+        "token": "I"
+    },
+    {
+        "tag": "vb",
+        "token": "love"
+    },
+    {
+        "tag": "jj",
+        "token": "golden"
+    },
+    {
+        "tag": "nn",
+        "token": "retrievers"
+    }
+]}
 
 * information about a server:
 
 http://localhost:8192/?do=resolve_url&url=http://wikipedia.org
 
+{
+    "Age": "11",
+    "Cache-Control": "s-maxage=3600, must-revalidate, max-age=0",
+    "Connection": "close",
+    "Content-Length": "48363",
+    "Content-Type": "text/html; charset=utf-8",
+    "Date": "Thu, 24 Mar 2011 23:48:31 GMT",
+    "Last-Modified": "Sun, 20 Mar 2011 10:08:42 GMT",
+    "Server": "Apache",
+    "Vary": "Accept-Encoding",
+    "X-Cache": [
+        "HIT from sq40.wikimedia.org",
+        "MISS from sq63.wikimedia.org"
+    ],
+    "X-Cache-Lookup": [
+        "HIT from sq40.wikimedia.org:80",
+        "HIT from sq63.wikimedia.org:3128"
+    ],
+    "_no_key": ["HTTP/1.0 200 OK"]
+}
+
 * sentence isolation & extraction:
 
 http://localhost:8192/?do=sentences&text=Hello,%20my%20name%20is%20Bob.%20%20I%20love%20to%20write%20Erlang%20code.
 
+{"sentences": [
+    "Hello, my name is Bob. ",
+    "I love to write Erlang code"
+]}
+
+* url processing:
+
+http://localhost:8192/?do=extract&url=http://en.wikipedia.org/wiki/Charlie_Sheen
+
+{
+	email-addresses: [ .. ],
+	html: "...",
+	links: [ "http://..", ... ],
+	named-linked: { "name": "link", ... },
+	text: " ... ",
+	tika-text: " ... "
+}
 
 
