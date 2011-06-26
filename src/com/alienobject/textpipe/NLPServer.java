@@ -20,7 +20,7 @@ public class NLPServer {
         Server server = new Server();
         Connector connector = new SelectChannelConnector();
         connector.setHost("0.0.0.0");
-        int HTTP_PORT = 8192;
+        int HTTP_PORT = 5060;
         connector.setPort(HTTP_PORT);
         server.setConnectors(new Connector[]{connector});
 
